@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+<!--{{request.user}} Returns the username of the current user-->
+<!--{{request.user.is_authenticated}}Returns a bool if user is logged in-->
+
+{% block content %}
+    <h1>About Us!</h1>
+    <p> About our company....</p>
+
+    <p>
+        {{ about_text }} <!--called a context variable-->
+    </p>
+    <p>Just a few items we offer:</p>
+
+    <!--for loop in a template-->
+    <ul>
+        {% for item in about_list %}
+        <li>{{ item|capfirst }}</li> 
+        <!--|capfirst is a built in filter, its a django function that operates on the variable-->
+        <!--see documentation for more built in filters-->
+        {% endfor %}
+    </ul>
+    <!-- to print the index of the current iteration of the for loop {{ forloop.counter }}-->
+    <!--using conditions in a template-->
+    {% if about_bool %}
+
+        {% if about_bool == True %}
+            <p>The bool is set to True</p>
+        {% elif about_bool == False %}
+            <p>The bool is set to False</p>
+        {% else %}
+            <p> The bool is not True or False</p>
+        {% endif %}
+
+    {% else %}
+        <p>The bool variable does not exist</p>
+    {% endif %}
+
+{% endblock %}
+
+
