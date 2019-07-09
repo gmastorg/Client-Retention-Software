@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<form action = '.' method='POST'> {% csrf_token %}
+    {{ form.as_p }} <!--  as_p means as <p> or {{ form.as_ul }} means as <ul>-->
+    <input type='submit' value='Save'/>
+</form>
+
+{% endblock %}

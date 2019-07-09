@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>In App Template</p>
+<h1>{{ object.client_name }}</h1>
+<p>Located in : {{ object.client_city }}, {{ object.client_state }}</p>
+<p>Client Since: {{ object.client_since }}</p>
+<p>Contact Number: {{ object.phone_number }}</p>
+
+{% endblock content %}

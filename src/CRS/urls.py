@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from pages.views import home_view, contact_view, about_view
-from products.views import product_detail_view, product_create_view
+
 
 #This is where you resolve a url to a view
 urlpatterns = [
@@ -24,7 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('contact/', contact_view),
     path('about/', about_view),
-    path('product/', product_detail_view),
-    path('create/', product_create_view),
+
+    #must import include see above
+    #allows you to put all products urls in their own urls.py file in products folder
+    path("products/", include ("products.urls")),
+    path("shows/", include ("shows.urls")),
+    path("clients/", include ("clients.urls")),
+    
     
 ]

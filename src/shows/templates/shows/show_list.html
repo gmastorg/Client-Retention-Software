@@ -1,0 +1,9 @@
+{% block content %}
+
+<h1>All Shows</h1>
+<!--When using class views, the list must be called "object_list-->
+{% for item in object_list %}
+    <p>{{ item.start_date }} - <a href='{{ item.get_absolute_url }}'>{{ item.show_name }}</a></p>
+{% endfor %}
+
+{% endblock %}

@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     #Apps I created
     'products',
     'pages',
+    'shows',
+    'clients',
 ]
 
 MIDDLEWARE = [
