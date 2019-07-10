@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<!--{{request.user}} Returns the username of the current user-->
+<!--{{request.user.is_authenticated}}Returns a bool if user is logged in-->
+
+
+<!--CREATE FORM USING RAW HTML-->
+{% block content %}
+
+<form action = '.' method='POST'> {% csrf_token %} <!---->
+    {{ form.as_p }} <!--  as_p means as <p> or {{ form.as_ul }} means as <ul>-->
+    <input type='submit' value='Save'/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% block content %}
+
+<h1>All Sectors</h1>
+{% for item in object_list %}
+    <p> <a href='{{ item.get_absolute_url }}'>{{ item.sector_name }}</a></p>
+{% endfor %}
+
+{% endblock %}

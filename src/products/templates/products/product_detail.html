@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>In App Template</p>
+<div>
 <h1>{{ object.title }}</h1>
 <p>{{ object.description }}</p>
 <p>{{ object.price }}</p>
 <p>{{ object.size }}</p>
+<p>{{ object.image.url }}</p>
 
+<img src="{{ object.image.url }}" alt="">
+</div>
 {% endblock content %}
+
+<img src="{{ object.image.url }}" alt="">

@@ -4,7 +4,7 @@ from django.urls import reverse
 # Model to represent a show
 class Show(models.Model):
     show_name = models.TextField(blank = False, null = False)
-    client_name = models.TextField(blank = False, null = False)
+    year = models.IntegerField(default=0000)
     start_date = models.DateField()
     end_date = models.DateField()
     city = models.TextField(blank = False, null = False)

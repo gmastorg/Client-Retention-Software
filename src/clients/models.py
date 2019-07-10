@@ -8,6 +8,8 @@ class Client(models.Model):
     client_state = models.TextField(blank = True, null = True)
     client_since = models.DateField()
     phone_number = models.TextField()
+    #This is a many2many relationship to sectors
+    sectors = models.ManyToManyField("sectors.Sector", blank = True)
 
     #Get absolute url method
     def get_absolute_url(self):
